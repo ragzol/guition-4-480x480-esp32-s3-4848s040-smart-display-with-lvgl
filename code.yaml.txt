@@ -101,8 +101,8 @@ time:
 # Switches in Homeassistant
 binary_sensor:
   - platform: homeassistant
-    id: Woonkamer_Voor
-    entity_id: light.guition_midden_internal_light_1
+    id: Dolgozó
+    entity_id: switch.shelly_dolgozo_lampa
     publish_initial_state: true
     on_state:
       then:
@@ -112,8 +112,8 @@ binary_sensor:
             checked: !lambda return x;
   
   - platform: homeassistant
-    id: Woonkamer_Achter
-    entity_id: light.guition_midden_internal_light_2
+    id: Dolgozó Asztal
+    entity_id: light.tasmota_dolgozo_asztal
     publish_initial_state: true
     on_state:
       then:
@@ -373,8 +373,8 @@ switch:
 # Ophalen Homeassistant sensoren
 sensor:
   - platform: homeassistant
-    id: Temp_Overkapping
-    entity_id: sensor.temp_overkapping
+    id: Dolgozó Hőmérő
+    entity_id: sensor.ble_temperature_dolgozo_hmer
     internal: true
     on_value:
       - lvgl.label.update:
@@ -1637,4 +1637,5 @@ display:
         - 6 #b3
         - 7 #b4
         - 15 #b5
+
 
